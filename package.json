@@ -1,0 +1,14 @@
+{
+  "name": "linkchat",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "test": "node --test tests/basic.test.js"
+  },
+  "devDependencies": {
+    "wrangler": "^3.108.0"
+  }
+}

@@ -1,0 +1,33 @@
+name = "linkchat"
+main = "./worker/index.js"
+compatibility_date = "2025-07-01"
+workers_dev = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "linkchat-db"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "linkchat-media"
+
+[[durable_objects.bindings]]
+name = "CHAT_ROOMS"
+class_name = "ChatRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["ChatRoom"]
+
+[vars]
+APP_NAME = "LinkChat"
+JWT_SECRET = "replace-me-with-a-strong-secret"
+
+[observability]
+[observability.logs]
+enabled = true
